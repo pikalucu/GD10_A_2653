@@ -11,6 +11,8 @@ export default function Search({ placeholder }: { placeholder: string }) {
 
   // Menahan proses pencarian selama 300ms agar tidak membebani server database [cite: 1681]
   const handleSearch = useDebouncedCallback((term: string) => {
+    console.log(`Searching... ${term}`);
+
     const params = new URLSearchParams(searchParams);
     
     // Reset halaman ke 1 setiap kali user melakukan pencarian baru [cite: 1781]
